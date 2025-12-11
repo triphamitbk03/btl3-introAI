@@ -40,6 +40,7 @@ Trình bày phân tích hệ thống Authentication (Login/Register/Logout) theo
 >
 > **✅ Điểm mạnh:**
 >
+> - **Deployed trên Render** - hệ thống đã được deploy lên production environment, accessible 24/7
 > - Sử dụng **Async MongoDB operations** với Motor driver - xử lý nhiều requests đồng thời hiệu quả
 > - **Auto-reconnect mechanism** - tự động kết nối lại database khi mất kết nối
 > - **CORS enabled** - frontend có thể gọi API dễ dàng
@@ -48,6 +49,7 @@ Trình bày phân tích hệ thống Authentication (Login/Register/Logout) theo
 >
 > - Chưa có **connection pooling** được config đúng cho production
 > - Chưa có **retry mechanism** khi DB operation thất bại
+> - Chưa có **health check endpoint** để monitor service status
 >
 > **Đây là code trong file db_client.py"**
 
@@ -66,6 +68,12 @@ async def get_users_collection():
     db = await get_database()
     return db["users"]  # ← Async operations
 ```
+
+**🎬 Optional:** Show deployment proof
+
+- Render dashboard hoặc
+- Truy cập live API: `https://your-app.onrender.com/docs`
+- Show API response time
 
 ---
 
@@ -440,7 +448,7 @@ Coverage: 70% of app.routers.auth
 
 ## 🎯 KEY MESSAGES
 
-1. **Availability: 6/10** - Async tốt, thiếu pooling
+1. **Availability: 6/10** - ✅ Deployed on Render, Async tốt, thiếu pooling & health check
 2. **Safety: 6.5/10** - Validation cơ bản, thiếu password policy
 3. **Security: 4/10** - 🔴 CRITICAL: No JWT, hardcoded creds
 4. **Reliability: 5.5/10** - Race condition cần fix
@@ -455,6 +463,8 @@ Coverage: 70% of app.routers.auth
 - [ ] Terminal sẵn sàng ở thư mục `/BE`
 - [ ] Test đã chạy thử và pass hết
 - [ ] Server có thể start (python3 -m app.main)
+- [ ] **Render deployment URL sẵn sàng** (để show live system)
+- [ ] **Postman/curl command để test live API** (optional demo)
 - [ ] Đã review script và timeline
 - [ ] Camera/mic hoạt động tốt
 - [ ] Screen resolution phù hợp (1920x1080 recommended)
