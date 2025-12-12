@@ -9,7 +9,6 @@ Analysis of Authentication system (Login/Register/Logout) across 4 quality attri
 - **Security** - Protection against threats
 - **Reliability** - System dependability and consistency
 
-**Duration:** 2 minutes  
 **Structure:** 6 parts (Introduction + 4 attributes + Demo)
 
 ---
@@ -32,11 +31,10 @@ Analysis of Authentication system (Login/Register/Logout) across 4 quality attri
 
 ---
 
-### PART 2: AVAILABILITY (20 seconds)
+### PART 2: AVAILABILITY 
 
 > **"First, Availability - the system's ability to be ready and accessible.**
 >
-> **System scores 6 out of 10 points.**
 >
 > **✅ FEATURES IMPLEMENTED:**
 >
@@ -71,11 +69,10 @@ async def get_users_collection():
 
 ---
 
-### PART 3: SAFETY (25 seconds)
+### PART 3: SAFETY 
 
 > **"Next is Safety - ensuring safe data handling and validation.**
 >
-> **System scores 6.5 out of 10 points.**
 >
 > **✅ FEATURES IMPLEMENTED:**
 >
@@ -120,11 +117,10 @@ pytest tests/test_auth.py::test_register_rejects_duplicate_email -v
 
 ---
 
-### PART 4: SECURITY (30 seconds)
+### PART 4: SECURITY 
 
 > **"Now, Security - the most critical attribute.**
 >
-> **System scores 4 out of 10 points - this is a CRITICAL issue.**
 >
 > **✅ FEATURES IMPLEMENTED:**
 >
@@ -165,11 +161,10 @@ pytest tests/test_auth_security.py::test_password_is_hashed_not_plaintext -v
 
 ---
 
-### PART 5: RELIABILITY (25 seconds)
+### PART 5: RELIABILITY 
 
 > **"Finally, Reliability - system dependability and consistency.**
 >
-> **System scores 7 out of 10 points - improved after fixing race condition!**
 >
 > **✅ FEATURES IMPLEMENTED:**
 >
@@ -197,7 +192,7 @@ async def _generate_user_id(users_collection) -> str:
 
 ---
 
-### PHẦN 6: DEMO & KẾT LUẬN (15 giây)
+### PHẦN 6: DEMO 
 
 > **"Now I will demonstrate the test suite to verify all features.**
 >
@@ -216,12 +211,12 @@ pytest tests/test_auth*.py -v --tb=short
 
 > **"Summary:**
 >
-> - ✅ **Availability: 6/10** - Deployed on Render with 24/7 accessibility, async operations for concurrent users
-> - ✅ **Safety: 6.5/10** - Email validation, role validation, duplicate prevention, blacklist protection
-> - ✅ **Security: 4/10** - Bcrypt password hashing with salt
-> - ✅ **Reliability: 7/10** - UUID-based unique IDs (race condition fixed), Pydantic validation, async error handling
+> - ✅ **Availability:** - Deployed on Render with 24/7 accessibility, async operations for concurrent users
+> - ✅ **Safety:** - Email validation, role validation, duplicate prevention, blacklist protection
+> - ✅ **Security:** - Bcrypt password hashing with salt
+> - ✅ **Reliability** - UUID-based unique IDs (race condition fixed), Pydantic validation, async error handling
 >
-> **Overall: 6/10 - System successfully implements core authentication with significant reliability improvements.**
+> **Overall: System successfully implements core authentication with significant reliability improvements.**
 >
 > **Thank you for watching!"**
 
